@@ -4,42 +4,44 @@
 
 /**
  * _printf - function to immitate printf
- * format: parameters for _printf
+ * @format: parameters for _printf
  * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
-    int len = 0;
-    int tempint;
-    char tempchar;
-    char *tempstr;
-    char strcopy[100];
+	int len = 0;
+	int tempint;
+	char tempchar;
+	char *tempstr;
+	char strcopy[100];
 
-    va_list ap;
-    va_start(ap, format);
+	va_list ap;
 
-    for (; format[len] != '\0'; len++)
-    {
-        fputc(format[len], stdout);
+	va_start(ap, format);
 
-        if (format[len] == '%')
-        {
-            len++;
-            switch (format[len])
-            {
-            case 'c':
-                tempchar = va_arg(ap, int);
-                fputc(tempchar, stdout);
-                break;
-            case 's':
-                tempstr = va_arg(ap, char *);
-                fputs(tempstr, stdout);
-                break;
-            }
-        }
-        else
-            fputc(format[len], stdout);
-    }
-    va_end(ap);
-    return (len);
+	for (; format[len] != '\0'; len++)
+	{
+		fputc(format[len], stdout);
+
+		if (format[len] == '%')
+		{
+			len++;
+			switch (format[len])
+			{
+				case 'c':
+				tempchar = va_arg(ap, int);
+				fputc(tempchar, stdout);
+				break;
+				case 's':
+				tempstr = va_arg(ap, char *);
+				fputs(tempstr, stdout);
+				break;
+			}
+		}
+	else
+		fputc(format[len], stdout);
+	}
+
+	va_end(ap);
+	return (len);
 }
