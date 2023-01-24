@@ -10,10 +10,8 @@
 int _printf(const char *format, ...)
 {
 	int len = 0;
-	int tempint;
 	char tempchar;
 	char *tempstr;
-	char strcopy[100];
 
 	va_list ap;
 
