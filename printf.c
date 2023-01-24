@@ -1,9 +1,11 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
  * _printf - function to immitate printf
- * format - parameters for _printf
+ * format: parameters for _printf
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
