@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "main.h"
 
 /**
@@ -79,11 +78,15 @@ int flags, int width, int precision, int size)
 	for (i = i - 1; i >= 0; i--)
 	{
 		char z = str[i];
+
 		write(1, &z, 1);
 		count++;
 	}
+	return (count);
+}
 
-=======
+
+
 /************************* PRINT NON PRINTABLE *************************/
 /**
  * print_non_printable - Prints ascii codes in hexa of non printable chars
@@ -170,6 +173,5 @@ int flags, int width, int precision, int size)
 			count++;
 		}
 	}
->>>>>>> ce65085c4ee6a8da6dd143667da7e8a0e98236c3
 	return (count);
 }
