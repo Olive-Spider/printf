@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+#include "main.h"
 /**
 * print_octal - Prints an unsigned number in octal notation
 * @types: Lista of arguments
@@ -20,8 +19,7 @@ int flags, int width, int precision, int size)
 	unsigned long int init_num = num;
 
 	UNUSED(width);
-=======
-#include "main.h"
+}
 
 /************************* PRINT UNSIGNED NUMBER *************************/
 /**
@@ -41,7 +39,6 @@ int print_unsigned(va_list types, char buffer[],
 	int i = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 	
->>>>>>> ce65085c4ee6a8da6dd143667da7e8a0e98236c3
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
@@ -51,7 +48,6 @@ int print_unsigned(va_list types, char buffer[],
 
 	while (num > 0)
 	{
-<<<<<<< HEAD
 		buffer[i--] = (num % 8) + '0';
 		num /= 8;
 	}
@@ -82,8 +78,6 @@ int flags, int width, int precision, int size)
 				, flags, 'X', width, precision, size));
 }
 
-
-=======
 		buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
